@@ -1,0 +1,69 @@
+{
+  "name": "@kiyonamiy/js-demo-package",
+  "version": "0.1.0",
+  "description": "This project records the most common and the smallest architecture in my daily work.",
+  "main": "./dist/index.js",
+  "browser": {
+    "./dist/index.js": "./dist/index.browser.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "typings": "./dist/index.d.ts",
+  "scripts": {
+    "link": "npm run build && npx yalc publish --no-scripts --push && echo '=========== link success ==========='",
+    "build": "npx webpack build --config ./webpack.config.js --mode development",
+    "serve": "npx webpack serve --config ./webpack.config.js --mode development",
+    "watch": "npx webpack watch --config ./webpack.config.js --mode development",
+    "prepare": "husky install",
+    "lint": "npx eslint --ext js,jsx,ts,tsx,html src/",
+    "test": "jest",
+    "commit": "cz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiyonamiy/js-demo-package.git"
+  },
+  "keywords": [],
+  "author": "kiyonamiy",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/kiyonamiy/js-demo-package/issues"
+  },
+  "homepage": "https://github.com/kiyonamiy/js-demo-package#readme",
+  "devDependencies": {
+    "@types/jest": "^28.1.6",
+    "@types/keccak": "^3.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "@typescript-eslint/parser": "^5.31.0",
+    "buffer": "^6.0.3",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "8.22.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.1",
+    "jest": "^28.1.3",
+    "prettier": "^2.8.4",
+    "process": "^0.11.10",
+    "ts-jest": "^28.0.7",
+    "ts-loader": "^9.4.2",
+    "webpack-cli": "^5.0.1",
+    "yalc": "^1.0.0-pre.53"
+  },
+  "dependencies": {
+    "keccak": "^3.0.3"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,html}": [
+      "npx eslint"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
