@@ -1,6 +1,6 @@
 {
   "name": "@kiyonamiy/js-demo-package",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "This project records the most common and the smallest architecture in my daily work.",
   "main": "./dist/index.js",
   "browser": {
